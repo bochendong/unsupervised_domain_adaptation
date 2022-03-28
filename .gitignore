@@ -15,9 +15,14 @@
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
-Network Trash Folder
+Network Trash Folde
 Temporary Items
 .apdisk
-
+*.t7
+*.pyc
 images/*
 test_gpu/*
+data/*
+model_hsitory/*
+loss_landscape/data/*
+loss_landscape/*.h5

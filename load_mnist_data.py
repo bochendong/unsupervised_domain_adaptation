@@ -5,7 +5,6 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from tensorflow.keras.datasets import mnist
 
-import data_visualization
 from torch.utils.data import TensorDataset, DataLoader
 
 import torch

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import argparse
 
-import mnist_m_gen
+import load_mnist_data
 import numpy as np
 '''
 Usage:
@@ -97,13 +97,13 @@ if __name__ == '__main__':
         mnist_tranformed_data = tsne(X_train, 2, 0.1, type = "mnist")
         plot_info(mnist_tranformed_data, y_train, 2)
     elif (args.dataset == 'mnist-m' and args.dim == 3):
-        minist_m_gen = mnist_m_gen.mnist_m_generator('./images/train/*.jpg', './images/test/*.jpg')
+        minist_m_gen = load_mnist_data.mnist_m_generator('./images/train/*.jpg', './images/test/*.jpg')
         minist_m_xtrain, minist_m_xtest = minist_m_gen.create_mnistm(x_train, x_test)
 
         mnist_m_tranformed_data = tsne(minist_m_xtrain, 3, 0.1,  type = "mnist-m")
         plot_info(mnist_m_tranformed_data, y_train, 3)
     elif(args.dataset == 'mnist-m' and args.dim == 2):
-        minist_m_gen = mnist_m_gen.mnist_m_generator('./images/train/*.jpg', './images/test/*.jpg')
+        minist_m_gen = load_mnist_data.mnist_m_generator('./images/train/*.jpg', './images/test/*.jpg')
         minist_m_xtrain, minist_m_xtest = minist_m_gen.create_mnistm(x_train, x_test)
 
         mnist_m_tranformed_data = tsne(minist_m_xtrain, 2, 0.1,  type = "mnist-m")

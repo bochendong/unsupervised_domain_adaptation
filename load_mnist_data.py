@@ -116,6 +116,11 @@ def get_numpy_data(percentage):
     minist_m_xtrain = (minist_m_xtrain/127.5) - 1
     minist_m_xtest = (minist_m_xtest/127.5) - 1
 
+    '''new_x_train = (new_x_train/255)
+    new_x_test = (new_x_test/255)
+    minist_m_xtrain = (minist_m_xtrain/255)
+    minist_m_xtest = (minist_m_xtest/255)'''
+
     return new_x_train, new_x_test, minist_m_xtrain, minist_m_xtest, y_train, y_test
 
 def get_data_loader(percentage):

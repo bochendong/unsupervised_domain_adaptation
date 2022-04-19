@@ -27,10 +27,6 @@ def tsne(x, dim, percentage, type):
      sample_size = int(percentage * length)
      x = x[:sample_size]
 
-     '''if (type == "mnist"):
-          x.resize(x.shape[0], x.shape[1] * x.shape[1])
-     else:'''
-
      x.resize(x.shape[0], x.shape[1] * x.shape[2] * x.shape[3])
      transformed_data = tsne.fit_transform(x)
      return transformed_data

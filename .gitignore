@@ -20,7 +20,6 @@ Temporary Items
 .apdisk
 *.t7
 *.pyc
-images/*
 test_gpu/*
 data/*
 model_hsitory/*

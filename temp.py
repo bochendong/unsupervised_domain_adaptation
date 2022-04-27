@@ -61,14 +61,20 @@ class MNISTM(Dataset):
 def get_mnistm_loaders(data_aug = False, batch_size=128,test_batch_size=1000):
     if data_aug:
         train_transform = transforms.Compose([
-            transforms.RandomCrop(28,padding=4),
+            transforms.ToPILImage(),
+            transforms.Resize(32),
+            transforms.RandomCrop(32,padding=4),
             transforms.ToTensor()
         ])
     else:
         train_transform = transforms.Compose([
+            transforms.ToPILImage(),
+            transforms.Resize(32),
             transforms.ToTensor()
         ])
     test_transform = transforms.Compose([
+        transforms.ToPILImage(),
+        transforms.Resize(32),
         transforms.ToTensor()
     ])
     kwargs = {}
@@ -83,17 +89,20 @@ def get_mnistm_loaders(data_aug = False, batch_size=128,test_batch_size=1000):
 
 def get_mnist_loaders(data_aug = False, batch_size=128,test_batch_size=1000):
     if data_aug:
-        train_transform = transforms.Compose([
-            transforms.RandomCrop(28,padding=4),
+        train_transform = transforms.Compose(
+            [transforms.Resize(32),
+            transforms.RandomCrop(32,padding=4),
             transforms.Grayscale(3),
             transforms.ToTensor()
         ])
     else:
         train_transform = transforms.Compose([
+            transforms.Resize(32),
             transforms.Grayscale(3),
             transforms.ToTensor()
         ])
     test_transform = transforms.Compose([
+        transforms.Resize(32),
         transforms.Grayscale(3),
         transforms.ToTensor()
     ])
